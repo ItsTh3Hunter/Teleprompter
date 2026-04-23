@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="Teleprompter - Configuração" 
         Height="600" Width="800" 
-        ResizeMode="CanResize" 
+        ResizeMode="CanMinimize" 
         Background="#1e1e1e">
+    <!-- ResizeMode="CanMinimize" Impede que o usuário maximize a janela evitando problemas de layout-->
+    
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -21,14 +23,17 @@
             
             <StackPanel Margin="0,0,20,0">
                 
-                <TextBlock Text="Fonte" 
-                           FontSize="12" 
-                           Foreground="#aaaaaa" 
-                           Margin="0,0,0,4"/>
+                <Label Content="Fonte" 
+                       FontSize="16" 
+                       Foreground="#aaaaaa" 
+                       Margin="0,0,0,4"
+                       HorizontalContentAlignment="Center"/>
                 
                 <ComboBox x:Name="cmbFonte" 
                           Width="160" 
-                          Height="32">
+                          Height="32"
+                          FontSize="18"
+                          HorizontalContentAlignment="Center">
                     <ComboBoxItem Content="Arial" IsSelected="True"/>
                     <ComboBoxItem Content="Calibri"/>
                     <ComboBoxItem Content="Times New Roman"/>
@@ -39,12 +44,16 @@
             </StackPanel>
             
             <StackPanel>
-                <TextBlock Text="Tamanho da Fonte" 
-                           FontSize="12" 
-                           Foreground="#aaaaaa" 
-                           Margin="0,0,0,4"/>
+                <Label Content="Tamanho da Fonte" 
+                       FontSize="16" 
+                       Foreground="#aaaaaa" 
+                       Margin="0,0,0,4"/>
                 
-                <ComboBox x:Name="cmbTamanhoFonte" Width="100" Height="32">
+                <ComboBox x:Name="cmbTamanhoFonte" 
+                          Width="100" 
+                          Height="32"
+                          FontSize="18"
+                          HorizontalContentAlignment="Center">
                     <ComboBoxItem Content="12"/>
                     <ComboBoxItem Content="14"/>
                     <ComboBoxItem Content="16"/>
@@ -62,12 +71,14 @@
                     <ComboBoxItem Content="80"/>
                 </ComboBox>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Margin="0,0,20,0">
                 
-                <TextBox Text="Velocidade" 
-                         Foreground="#aaaaaa" 
-                         FontSize="12" 
-                         Margin="0,0,0,4"/>
+                <Label Content="Velocidade" 
+                       Foreground="#aaaaaa" 
+                       FontSize="16" 
+                       Margin="0,0,0,4"
+                       HorizontalContentAlignment="Center"/>
+                
                 <StackPanel Orientation="Horizontal">
                     
                     <Slider x:Name="sldVelocidade" 
@@ -75,19 +86,22 @@
                             Value="3" Width="160" 
                             VerticalAlignment="Center"/>
 
-                    <TextBox x:Name="txtVelocidade" 
-                             Text="3" 
-                             Foreground="#ffffff" 
+                    <Label   x:Name="txtVelocidade" 
+                             Content="{Binding ElementName=sldVelocidade, Path=Value}"
+                             ContentStringFormat="{}{0:N0}"
+                             Foreground="#aaaaaa" 
                              Margin="8,0,0,0" 
-                             VerticalAlignment="Center"/>
+                             VerticalAlignment="Center"
+                             FontSize="16"
+                             Width="30"/>
                 </StackPanel>
             </StackPanel>
         </WrapPanel>
         
-        <WrapPanel Grid.Row="1" Margin="0,0,0,16">
-            <StackPanel Margin="0,0,20,0">
+        <WrapPanel Grid.Row="1" Margin="0,0,0,0">
+            <StackPanel Margin="0,20,20,0">
                 <TextBlock Text="Cor do Texto" 
-                           FontSize="12" Foreground="#aaaaaa" 
+                           FontSize="16" Foreground="#aaaaaa" 
                            Margin="0,0,0,4"/>
                 <Button x:Name="btnCorTexto" 
                         Width="60" 
@@ -97,9 +111,9 @@
                         BorderThickness="1"
                         Click="btnCorTexto_Click"/>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Margin="0,20,20,0">
                 <TextBlock Text="Cor de Fundo" 
-                           FontSize="12" 
+                           FontSize="16" 
                            Foreground="#aaaaaa" 
                            Margin="0,0,0,4"/>
                 <Button x:Name="btnCorFundo" 
@@ -114,10 +128,11 @@
         
         <StackPanel Grid.Row="2" Margin="0,0,0,16">
             
-            <TextBlock Text="Cole seu texto aqui" 
-                       FontSize="12" 
+            <Label   Content="Cole seu texto aqui" 
+                       FontSize="16" 
                        Foreground="#aaaaaa" 
-                       Margin="0,0,0,4"/>
+                       Margin="0,0,0,4"
+                       HorizontalContentAlignment="Center"/>
 
             <TextBox x:Name="txtRoteiro" 
                      AcceptsReturn="True" 
@@ -133,9 +148,9 @@
         </StackPanel>
 
         <Button Grid.Row="3" Content="Iniciar Teleprompter" 
-                Width="240" Height="40" 
+                Width="180" Height="40" 
                 HorizontalAlignment="Right"
-                FontSize="14"
+                FontSize="16"
                 Background="#0066cc" 
                 Foreground="White" 
                 BorderBrush="#555555" 

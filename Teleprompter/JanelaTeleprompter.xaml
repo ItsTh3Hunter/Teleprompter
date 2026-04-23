@@ -5,7 +5,7 @@
         WindowStyle="None"
         WindowState="Maximized"
         Background="Black"
-        KeyDown="Window_KeyDown">
+        KeyDown="Passador_Slide">
 
     <Canvas x:Name="canvas">
         <TextBlock x:Name="txtTeleprompter"
