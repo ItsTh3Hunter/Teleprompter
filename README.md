@@ -29,3 +29,7 @@ A desktop teleprompter application built with WPF and C# (.NET 10), developed fo
 | PageDown | Scroll forward |
 | PageUp | Scroll backward |
 | Escape | Close teleprompter |
+
+## Open for:
+- Constructive criticism and Suggestions
+- Contact
