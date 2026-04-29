@@ -9,7 +9,6 @@ A desktop teleprompter application built with WPF and C# (.NET 10), developed fo
 - Custom font and font size selection
 - Custom text and background color
 - Physical presentation clicker support (PageDown/PageUp)
-- Company logo as background watermark
 - Fullscreen teleprompter mode
 
 ## How to use
